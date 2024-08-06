@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homari Sign_Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .img1 {
+            height: 100vh;
+            width: 100%;
+            background-image: url("image/homari-banner01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+
+        .form-heading {
+            height: 85%;
+            width: 60%;
+            padding: 1rem;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .form-heading:hover {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+        .form-heading p {
+            line-height: 1.625;
+            font-weight: 400;
+        }
+
+        label {
+            font-size: .8125rem;
+            font-weight: 600;
+            margin-bottom: .375rem;
+            color: #334155;
+            margin-left: .125rem;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: rgb(0, 0, 0);
+            border: none;
+        }
+
+        .display-6 {
+            font-family: sans-serif;
+        }
+
+        .social {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 p-0 d-md-block d-none">
+                <div class="img1">
+
+                </div>
+            </div>
+            <div class="col d-flex align-items-center justify-content-center">
+                <div class="form-heading">
+                    <h3 class="fw-semibold text-dark display-6">Sign Up</h3>
+                    <p class="mb-0">Nice to meet you! Please enter your details.</p>
+                    <div class="form-container mt-3">
+                        <form role="form">
+                            <label>Name</label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control shadow-none" placeholder="Enter your name"
+                                    aria-label="Name" aria-describedby="name-addon">
+                            </div>
+                            <label>Email Address</label>
+                            <div class="mb-3">
+                                <input type="email" class="form-control shadow-none"
+                                    placeholder="Enter your email address" aria-label="Email"
+                                    aria-describedby="email-addon">
+                            </div>
+                            <label>Password</label>
+                            <div class="mb-3">
+                                <input type="password" class="form-control shadow-none" placeholder="Create a password"
+                                    aria-label="Password" aria-describedby="password-addon">
+                            </div>
+                            <div class="form-check form-check-info text-left mb-0">
+                                <input class="form-check-input shadow-none" type="checkbox" value=""
+                                    id="flexCheckDefault">
+                                <label class="fw-normal text-dark mb-0" for="flexCheckDefault">
+                                    I agree the <a href="javascript:;" class="text-dark font-weight-bold">Terms and
+                                        Conditions</a>.
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <a href="index.html">
+                                    <button type="button" class="btn btn-dark w-100 mt-4 mb-4"
+                                        style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;padding: 10px;">Sign
+                                        up</button>
+                                </a>
+                                <button type="button" class="btn btn-white btn-icon w-100 mb-3 social"
+                                    style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; padding: 10px;">
+                                    <span class="btn-inner--icon me-1">
+                                        <img class="w-5 img-fluid" src="image/google_logo.png" />
+                                    </span>
+                                    <span class="btn-inner--text social">Sign up with Google</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center pt-0 px-lg-2 px-1 mt-3">
+                        <p class="mb-4 text-xs mx-auto" style="font-size: 12px;">
+                            Already have an account?
+                            <a href="index.html" class="text-primary font-weight-bold">Sign in</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

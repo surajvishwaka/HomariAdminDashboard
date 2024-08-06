@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homari Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .border-right {
+            border-right: 1px solid #b3b3b3;
+        }
+
+        .dlab-space {
+            margin: 0 .938rem;
+        }
+
+        .order-menu img {
+            border: 1px solid #fc8019;
+            border: 1px solid var(--primary);
+            border-radius: .625rem;
+            height: 3.313rem;
+            object-fit: contain;
+            width: 3.313rem;
+        }
+
+        .order-menu h6 {
+            font-size: 1rem;
+        }
+
+        .font-w600 {
+            font-weight: 600;
+        }
+
+        .p {
+            line-height: 1.8;
+            margin-top: 0px;
+        }
+
+        .km {
+
+            color: #3d4152;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .font-w500 {
+            font-weight: 500;
+        }
+
+        .cate-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="Dashboard.html"><img src="image/Homari-HD.png" class="img-fluid w-50" /></a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="Dashboard.html" class="sidebar-link">
+                            <i class="bi bi-grid-fill pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <hr class="my-0">
+                    <li class="sidebar-item">
+                        <a href="Users.html" class="sidebar-link">
+                            <i class="fa-solid fa-circle-user pe-2"></i>
+                            Users details
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#chef" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-utensils pe-2"></i>
+                            Chef details
+                        </a>
+                        <ul id="chef" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Chefdetails.html" class="sidebar-link" style="font-size: 12px;">Chef List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddChef.html" class="sidebar-link" style="font-size: 12px;">Chef Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-burger pe-2"></i>
+                            Meal
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Productlist.html" class="sidebar-link" style="font-size: 12px;">Meal List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddProduct.html" class="sidebar-link" style="font-size: 12px;">Meal Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#category" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-layer-group pe-2"></i>
+                            Category
+                        </a>
+                        <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Categorylist.html" class="sidebar-link" style="font-size: 12px;">Category
+                                    List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddCategory.html" class="sidebar-link" style="font-size: 12px;">Add
+                                    Category</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#order" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-receipt pe-2"></i>
+                            Order
+                        </a>
+                        <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Orderlist.html" class="sidebar-link" style="font-size: 12px;">Order List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="Bill.html" class="sidebar-link" style="font-size: 12px;">Bill</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item position-absolute" style="bottom: 10px;">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="col-4 d-flex align-items-center justify-content-between inp">
+                    <label for="search">
+                        <i class="fa-solid fa-magnifying-glass mx-2"></i>
+                    </label>
+                    <input style="font-size: 16px; outline: none;" class="form-control shadow-none border-0" type="text"
+                        placeholder="Search here..." id="search">
+                </div>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="Profile.html" class="dropdown-item fs-6 py-2"><i class="fa-solid fa-user-plus pe-2"></i>
+                                    My Profile</a>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid scrollss">
+                <div class="row">
+                    <div class="col">
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div
+                                        class="col d-flex align-items-center justify-content-between p-4 rounded-3 headerr">
+                                        <div>
+                                            <h6>Bill Details</h6>
+                                        </div>
+                                        <div style="height: 22px;">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="Dashboard.html">Dashboard</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="Orderlist.html">Order
+                                                            Details</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Bill Details
+                                                    </li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid mb-4">
+                                <div class="row">
+                                    <div class="col p-4 rounded-3 headerr">
+                                        <div class="d-flex align-items-center justify-content-around row px-4">
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Menu</h4>
+                                            </div>
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Status</h4>
+                                            </div>
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Date</h4>
+                                            </div>
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Address</h4>
+                                            </div>
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Total</h4>
+                                            </div>
+                                            <div class="col-2">
+                                                <h4 class="fs-6">Payment</h4>
+                                            </div>
+                                        </div>
+                                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed shadow-none" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                                        <div class="row d-flex align-items-center justify-content-around"
+                                                            style="width: 100%;">
+                                                            <div class="col-2">
+                                                                <p class="font-w500 mb-0 bill-text">Order #1</p>
+                                                            </div>
+                                                            <div class="col-2"><a
+                                                                    class="btn  btn-sm btn-outline-success bgl-success bill-textt"
+                                                                    href="#">Complete</a></div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">July 1, 2024, 08:22 AM</p>
+                                                            </div>
+                                                            <div class="col-2 d-flex align-items-center"><i
+                                                                    class="fa-solid fa-location-dot me-2 bill-text"></i>
+                                                                <p class="mb-0 bill-text">Elm Street-23</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">₹ 300</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">Cash</p>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">Placeholder content for this accordion,
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="order-menu dlab-space">
+                                                                    <h4 class="orm">Order Menu</h4>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start  mb-2">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0 ">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div>
+                                                                        <h4 class="mb-2">Fast Food Resto</h4>
+                                                                        <div class="d-flex align-items-center mb-4"><svg
+                                                                                width="16" height="15"
+                                                                                viewBox="0 0 16 15" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path
+                                                                                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                                                                                    fill="#FC8019"></path>
+                                                                            </svg>
+                                                                            <p class="mb-0 px-2">5.0</p><svg
+                                                                                class="me-2" width="4" height="5"
+                                                                                viewBox="0 0 4 5" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <circle cx="2" cy="2.50003" r="2"
+                                                                                    fill="#C4C4C4"></circle>
+                                                                            </svg>
+                                                                            <p class="mb-0">1k+ Reviews</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-3">
+                                                                        <span>Delivery Time </span>
+                                                                        <h6 class="mb-0">10 Min</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <span>Distance</span>
+                                                                        <h6 class="mb-0 km">2.5 Km</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Status</p>
+                                                                        <p class="mb-0">Date</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-4">
+                                                                        <h6>Completed</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Bills</p>
+                                                                        <p class="mb-0">Date Paid</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <h6>Order #1</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 mt-4 ms-sm-0 ms-3">
+                                                                <p class="fs-18 font-w500">Total</p>
+                                                                <h4 class="cate-title text-success">₹202.00</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed shadow-none" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                        <div class="row d-flex align-items-center justify-content-around"
+                                                            style="width: 100%;">
+                                                            <div class="col-2">
+                                                                <p class="font-w500 mb-0 bill-text">Order #2</p>
+                                                            </div>
+                                                            <div class="col-2"><a
+                                                                    class="btn  btn-sm btn-outline-danger bgl-danger bill-texttt"
+                                                                    href="#">Canceled</a></div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">July 1, 2024, 08:22 AM</p>
+                                                            </div>
+                                                            <div class="col-2 d-flex align-items-center"><i
+                                                                    class="fa-solid fa-location-dot me-2 bill-text"></i>
+                                                                <p class="mb-0 bill-text">Elm Street-23</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">₹ 300</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">Cash</p>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">Placeholder content for this accordion,
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="order-menu dlab-space">
+                                                                    <h4 class="orm">Order Menu</h4>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start  mb-2">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0 ">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div>
+                                                                        <h4 class="mb-2">Fast Food Resto</h4>
+                                                                        <div class="d-flex align-items-center mb-4"><svg
+                                                                                width="16" height="15"
+                                                                                viewBox="0 0 16 15" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path
+                                                                                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                                                                                    fill="#FC8019"></path>
+                                                                            </svg>
+                                                                            <p class="mb-0 px-2">5.0</p><svg
+                                                                                class="me-2" width="4" height="5"
+                                                                                viewBox="0 0 4 5" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <circle cx="2" cy="2.50003" r="2"
+                                                                                    fill="#C4C4C4"></circle>
+                                                                            </svg>
+                                                                            <p class="mb-0">1k+ Reviews</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-3">
+                                                                        <span>Delivery Time </span>
+                                                                        <h6 class="mb-0">10 Min</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <span>Distance</span>
+                                                                        <h6 class="mb-0 km">2.5 Km</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Status</p>
+                                                                        <p class="mb-0">Date</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-4">
+                                                                        <h6>Canceled</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Bills</p>
+                                                                        <p class="mb-0">Date Paid</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <h6>Order #1</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 mt-4 ms-sm-0 ms-3">
+                                                                <p class="fs-18 font-w500">Total</p>
+                                                                <h4 class="cate-title text-success">₹202.00</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed shadow-none" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                                        <div class="row d-flex align-items-center justify-content-around"
+                                                            style="width: 100%;">
+                                                            <div class="col-2">
+                                                                <p class="font-w500 mb-0 bill-text">Order #3</p>
+                                                            </div>
+                                                            <div class="col-2"><a
+                                                                    class="btn  btn-sm btn-outline-primary bgl-primary bill-textttt"
+                                                                    href="#">Delivering</a></div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">July 1, 2024, 08:22 AM</p>
+                                                            </div>
+                                                            <div class="col-2 d-flex align-items-center"><i
+                                                                    class="fa-solid fa-location-dot me-2 bill-text"></i>
+                                                                <p class="mb-0 bill-text">Elm Street-23</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">₹ 300</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <p class="bill-text mb-0">Cash</p>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">Placeholder content for this accordion,
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="order-menu dlab-space">
+                                                                    <h4 class="orm">Order Menu</h4>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start  mb-2">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-xl-center justify-content-lg-start">
+                                                                        <img class="me-2" src="image/pic2.jpg" alt="">
+                                                                        <div>
+                                                                            <h6 class="font-w600 text-nowrap mb-0 ">
+                                                                                Pepperoni Pizza</h6>
+                                                                            <p class="mb-0 p">x1</p>
+                                                                        </div>
+                                                                        <h6 class="text-success mb-0 ps-3 ms-auto">
+                                                                            +₹5.59</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div>
+                                                                        <h4 class="mb-2">Fast Food Resto</h4>
+                                                                        <div class="d-flex align-items-center mb-4"><svg
+                                                                                width="16" height="15"
+                                                                                viewBox="0 0 16 15" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path
+                                                                                    d="M8 0.500031L9.79611 6.02789H15.6085L10.9062 9.4443L12.7023 14.9722L8 11.5558L3.29772 14.9722L5.09383 9.4443L0.391548 6.02789H6.20389L8 0.500031Z"
+                                                                                    fill="#FC8019"></path>
+                                                                            </svg>
+                                                                            <p class="mb-0 px-2">5.0</p><svg
+                                                                                class="me-2" width="4" height="5"
+                                                                                viewBox="0 0 4 5" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <circle cx="2" cy="2.50003" r="2"
+                                                                                    fill="#C4C4C4"></circle>
+                                                                            </svg>
+                                                                            <p class="mb-0">1k+ Reviews</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-3">
+                                                                        <span>Delivery Time </span>
+                                                                        <h6 class="mb-0">10 Min</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <span>Distance</span>
+                                                                        <h6 class="mb-0 km">2.5 Km</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 my-4 border-right">
+                                                                <div class="dlab-space">
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Status</p>
+                                                                        <p class="mb-0">Date</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-4">
+                                                                        <h6>Delivering</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between mb-1">
+                                                                        <p class="mb-0">Bills</p>
+                                                                        <p class="mb-0">Date Paid</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex align-items-center justify-content-between">
+                                                                        <h6>Order #1</h6>
+                                                                        <h6>June 1, 2020</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-xxl-6 col-sm-6 mt-4 ms-sm-0 ms-3">
+                                                                <p class="fs-18 font-w500">Total</p>
+                                                                <h4 class="cate-title text-success">₹202.00</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="m-0" style="font-size: 13px;"><span>Showing 1-5</span> from <span>40</span>
+                                    data</p>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination mb-0">
+                                        <li class="page-item">
+                                            <a class="page-link shadow-none text-dark-emphasis" href="#"
+                                                aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link shadow-none text-dark-emphasis"
+                                                href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link shadow-none text-dark-emphasis"
+                                                href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link shadow-none text-dark-emphasis"
+                                                href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link shadow-none text-dark-emphasis" href="#"
+                                                aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="bg-transparent text-center">
+                <!-- Grid container -->
+                <div class="container p-4"></div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    ⓒ 2024 Copyright: Homari
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

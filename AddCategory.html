@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homari Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="Dashboard.html"><img src="image/Homari-HD.png" class="img-fluid w-50" /></a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="Dashboard.html" class="sidebar-link">
+                            <i class="bi bi-grid-fill pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <hr class="my-0">
+                    <li class="sidebar-item">
+                        <a href="Users.html" class="sidebar-link">
+                            <i class="fa-solid fa-circle-user pe-2"></i>
+                            Users details
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#chef" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-utensils pe-2"></i>
+                            Chef details
+                        </a>
+                        <ul id="chef" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Chefdetails.html" class="sidebar-link" style="font-size: 12px;">Chef List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddChef.html" class="sidebar-link" style="font-size: 12px;">Chef Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-burger pe-2"></i>
+                            Meal
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Productlist.html" class="sidebar-link" style="font-size: 12px;">Meal List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddProduct.html" class="sidebar-link" style="font-size: 12px;">Meal Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#category" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-layer-group pe-2"></i>
+                            Category
+                        </a>
+                        <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Categorylist.html" class="sidebar-link" style="font-size: 12px;">Category
+                                    List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddCategory.html" class="sidebar-link" style="font-size: 12px;">Add
+                                    Category</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#order" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-receipt pe-2"></i>
+                            Order
+                        </a>
+                        <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Orderlist.html" class="sidebar-link" style="font-size: 12px;">Order List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="Bill.html" class="sidebar-link" style="font-size: 12px;">Bill</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item position-absolute" style="bottom: 10px;">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="col-4 d-flex align-items-center justify-content-between inp">
+                    <label for="search">
+                        <i class="fa-solid fa-magnifying-glass mx-2"></i>
+                    </label>
+                    <input style="font-size: 16px; outline: none;" class="form-control shadow-none border-0" type="text"
+                        placeholder="Search here..." id="search">
+                </div>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="Profile.html" class="dropdown-item fs-6 py-2"><i class="fa-solid fa-user-plus pe-2"></i>
+                                    My Profile</a>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid scrollss">
+                <div class="row">
+                    <div class="col">
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div
+                                        class="col d-flex align-items-center justify-content-between p-4 rounded-3 headerr">
+                                        <div>
+                                            <h6>Category Upload</h6>
+                                        </div>
+                                        <div style="height: 22px;">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="Dashboard.html">Dashboard</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="Categorylist.html">Category
+                                                            List</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Category
+                                                        Upload
+                                                    </li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col p-4 rounded-3 headerr">
+                                        <div>
+                                            <h6>Add Category Details</h6>
+                                        </div>
+
+                                        <div class="form-check form-check-inline mt-3">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">Non veg</label>
+                                        </div>
+                                        <div class="form-check form-check-inline mt-3">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">Veg</label>
+                                        </div>
+
+                                        <div>
+                                            <label for="file" class="form-label mt-3" style="font-size: 12px;">ADD
+                                                CATEGORY IMAGE</label>
+                                            <input type="file" id="file" class="form-control shadow-none"
+                                                aria-describedby="passwordHelpBlock">
+                                        </div>
+
+                                        <div>
+                                            <label for="inputPassword5" class="form-label mt-3"
+                                                style="font-size: 12px;">CATEGORY NAME</label>
+                                            <input type="text" id="inputPassword5" class="form-control shadow-none"
+                                                aria-describedby="passwordHelpBlock">
+                                        </div>
+
+                                        <div class="text-center mt-4 mb-2">
+                                            <button type="button" class="btn btn-danger">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="bg-transparent text-center">
+                <!-- Grid container -->
+                <div class="container p-4"></div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    ⓒ 2024 Copyright: Homari
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

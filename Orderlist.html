@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homari Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="Dashboard.html"><img src="image/Homari-HD.png" class="img-fluid w-50" /></a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="Dashboard.html" class="sidebar-link">
+                            <i class="bi bi-grid-fill pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <hr class="my-0">
+                    <li class="sidebar-item">
+                        <a href="Users.html" class="sidebar-link">
+                            <i class="fa-solid fa-circle-user pe-2"></i>
+                            Users details
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#chef" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-utensils pe-2"></i>
+                            Chef details
+                        </a>
+                        <ul id="chef" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Chefdetails.html" class="sidebar-link" style="font-size: 12px;">Chef List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddChef.html" class="sidebar-link" style="font-size: 12px;">Chef Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-burger pe-2"></i>
+                            Meal
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="#" class="sidebar-link" style="font-size: 12px;">Meal List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddProduct.html" class="sidebar-link" style="font-size: 12px;">Meal Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#category" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-layer-group pe-2"></i>
+                            Category
+                        </a>
+                        <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Categorylist.html" class="sidebar-link" style="font-size: 12px;">Category
+                                    List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="AddCategory.html" class="sidebar-link" style="font-size: 12px;">Add
+                                    Category</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#order" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-receipt pe-2"></i>
+                            Order
+                        </a>
+                        <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item mx-4">
+                                <a href="Orderlist.html" class="sidebar-link" style="font-size: 12px;">Order List</a>
+                            </li>
+                            <li class="sidebar-item mx-4">
+                                <a href="Bill.html" class="sidebar-link" style="font-size: 12px;">Bill</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item position-absolute" style="bottom: 10px;">
+                        <ul>
+                            <li>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="col-4 d-flex align-items-center justify-content-between inp">
+                    <label for="search">
+                        <i class="fa-solid fa-magnifying-glass mx-2"></i>
+                    </label>
+                    <input style="font-size: 16px; outline: none;" class="form-control shadow-none border-0" type="text"
+                        placeholder="Search here..." id="search">
+                </div>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="Profile.html" class="dropdown-item fs-6 py-2"><i class="fa-solid fa-user-plus pe-2"></i>
+                                    My Profile</a>
+                                <a href="index.html" class="dropdown-item fs-6 py-2"><i
+                                        class="fa-solid fa-arrow-right-from-bracket pe-2"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid scrollss">
+                <div class="row">
+                    <div class="col">
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div
+                                        class="col d-flex align-items-center justify-content-between p-4 rounded-3 headerr">
+                                        <div>
+                                            <h6>Order Details</h6>
+                                        </div>
+                                        <div style="height: 22px;">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="Dashboard.html">Dashboard</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Order Details
+                                                    </li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main class="content px-3 py-2">
+                            <div class="container-fluid ">
+                                <div class="row">
+                                    <div class="col-4 d-flex align-items-center justify-content-center rounded-3"
+                                        style="border: 1px solid grey;">
+                                        <div class="tabs mt-3 mb-3">
+                                            <input type="radio" class="tabs__radio" name="tabs-example" id="tab1"
+                                                checked>
+                                            <label for="tab1" class="tabs__label">Order in</label>
+                                            <div class="tabs__content mt-3">
+                                                <div class="tab__blocks mb-3 rounded-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #1</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #2</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #3</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #4</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #5</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #6</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Order #7</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+                                            <label for="tab2" class="tabs__label">Prepared</label>
+                                            <div class="tabs__content mt-3">
+                                                <div class="tab__blocks mb-3 rounded-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Prepared</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="radio" class="tabs__radio" name="tabs-example" id="tab3">
+                                            <label for="tab3" class="tabs__label">Delivered</label>
+                                            <div class="tabs__content mt-3">
+                                                <div class="tab__blocks mb-3 rounded-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab__blocks rounded-3 mt-3">
+                                                    <div
+                                                        class="orderin-bx d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <h4 class="fs-6">Delivered</h4><span>June 1, 2020, 08:22
+                                                                AM</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <h4 class="text-success mb-0 mx-2 fs-6">₹202.00</h4><a
+                                                                class="icon-bx text-dark-emphasis" href="#"><i
+                                                                    class="fa-solid fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="order-container rounded-3">
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                <div class="mb-4">
+                                                    <h4 class="fs-6">Order #1</h4><span>June 1, 2020, 08:22 AM</span>
+                                                </div>
+                                                <div class="orders-img d-flex">
+                                                    <img src="image/profile.jpg" class="img-fluid" />
+                                                    <div>
+                                                        <h6 class="font-w500">Ruby Roben</h6><span>User since
+                                                            2020</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                <div>
+                                                    <div>
+                                                        <span class="mx-1">Delivery Address</span>
+                                                    </div>
+                                                    <div class="align-items-center d-flex fs-6">
+                                                        <i class="fa-solid fa-location-dot mx-1 mt-2"></i>
+                                                        <span class="mt-2">Sambhaji Colony</span>
+                                                    </div>
+                                                    <p class="mx-1 mt-2 fst-normal">Lorem ipsum dolor sit amet,
+                                                        consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div>
+                                                <h4 class="fs-6">Order Menu</h4>
+                                                <div class="d-flex align-items-center mb-4 order-imgg mt-3">
+                                                    <img class="me-3 img-fluid" src="image/pic2.jpg" />
+                                                    <div>
+                                                        <h4 class="fs-6 text-nowrap mb-0"><a href="#"
+                                                                class="text-dark-emphasis">Pepperoni Pizza</a></h4>
+                                                        <p class="mb-0">x1</p>
+                                                    </div>
+                                                    <h4 class="text-warning mb-0 ms-auto">+₹5.59</h4>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-4 order-imgg mt-3">
+                                                    <img class="me-3 img-fluid" src="image/pic2.jpg" />
+                                                    <div>
+                                                        <h4 class="fs-6 text-nowrap mb-0"><a href="#"
+                                                                class="text-dark-emphasis">Pepperoni Pizza</a></h4>
+                                                        <p class="mb-0">x1</p>
+                                                    </div>
+                                                    <h4 class="text-warning mb-0 ms-auto">+₹5.59</h4>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-4 order-imgg mt-3">
+                                                    <img class="me-3 img-fluid" src="image/pic2.jpg" />
+                                                    <div>
+                                                        <h4 class="fs-6 text-nowrap mb-0"><a href="#"
+                                                                class="text-dark-emphasis">Pepperoni Pizza</a></h4>
+                                                        <p class="mb-0">x1</p>
+                                                    </div>
+                                                    <h4 class="text-warning mb-0 ms-auto">+₹5.59</h4>
+                                                </div>
+                                                <div class="d-flex align-items-center order-imgg mt-3">
+                                                    <img class="me-3 img-fluid" src="image/pic2.jpg" />
+                                                    <div>
+                                                        <h4 class="fs-6 text-nowrap mb-0"><a href="#"
+                                                                class="text-dark-emphasis">Pepperoni Pizza</a></h4>
+                                                        <p class="mb-0">x1</p>
+                                                    </div>
+                                                    <h4 class="text-warning mb-0 ms-auto">+₹5.59</h4>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h4 class="mb-0 fs-6">Total:</h4>
+                                                <h4 class="cate-title text-warning">₹16.77</h4>
+                                            </div>
+                                            <hr>
+                                            <div class="text-end">
+                                                <a class="btn btn-outline-danger me-sm-4 me-2" href="#">Reject Order</a>
+                                                <a class="btn btn-primary" href="#">Accept Order</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="bg-transparent text-center">
+                <!-- Grid container -->
+                <div class="container p-4"></div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    ⓒ 2024 Copyright: Homari
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
